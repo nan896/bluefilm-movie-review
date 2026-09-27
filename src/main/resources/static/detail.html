@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影详情 · 蓝影</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="header-inner">
+        <a class="brand" href="/">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2l2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>
+            </svg>
+            <span>蓝影</span>
+        </a>
+        <nav class="main-nav">
+            <a href="/">选电影</a>
+            <a href="/#rankings">排行榜</a>
+            <a href="/admin.html">管理</a>
+        </nav>
+        <a class="header-back" href="/">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            返回片库
+        </a>
+        <div id="user-area" class="user-area"></div>
+    </div>
+</header>
+
+<main class="container detail-page">
+    <section id="movie-detail" class="movie-detail" aria-live="polite">
+        <div class="detail-skeleton">
+            <div class="skeleton poster-skeleton"></div>
+            <div class="skeleton-copy">
+                <div class="skeleton line wide"></div>
+                <div class="skeleton line"></div>
+                <div class="skeleton line short"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="review-form-section">
+        <div class="section-heading compact">
+            <div>
+                <p class="section-kicker">写下你的看法</p>
+                <h2>给这部电影打分</h2>
+            </div>
+        </div>
+        <form id="review-form" class="review-form">
+            <div class="rating-picker" id="rating-picker" aria-label="选择评分">
+                <button type="button" class="star-button" data-score="1" aria-label="1 星">★</button>
+                <button type="button" class="star-button" data-score="2" aria-label="2 星">★</button>
+                <button type="button" class="star-button" data-score="3" aria-label="3 星">★</button>
+                <button type="button" class="star-button" data-score="4" aria-label="4 星">★</button>
+                <button type="button" class="star-button" data-score="5" aria-label="5 星">★</button>
+                <span id="rating-label">请选择星级</span>
+            </div>
+            <input id="review-nickname" class="text-input" type="text" maxlength="20" placeholder="昵称（未登录时可选）">
+            <textarea id="review-content" class="text-area" maxlength="1000" required
+                      placeholder="说说剧情、表演、画面或它带给你的感受..."></textarea>
+            <div class="form-actions">
+                <span id="review-status" class="form-status"></span>
+                <button class="button primary" type="submit">发布短评</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="review-list-section">
+        <div class="section-heading compact">
+            <div>
+                <p class="section-kicker">全部讨论</p>
+                <h2 id="review-count-title">短评</h2>
+            </div>
+        </div>
+        <div id="review-list" class="review-list" aria-live="polite"></div>
+        <div id="review-empty" class="empty-state" hidden>
+            <strong>还没有短评</strong>
+            <span>来写下第一条吧。</span>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <span>蓝影 · 电影评论网站</span>
+        <a href="/">返回首页</a>
+    </div>
+</footer>
+
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/detail.js"></script>
+</body>
+</html>

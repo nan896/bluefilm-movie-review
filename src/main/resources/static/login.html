@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录注册 · 蓝影</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="auth-page">
+<main class="auth-shell">
+    <section class="auth-intro">
+        <a class="brand light" href="/">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2l2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>
+            </svg>
+            <span>蓝影</span>
+        </a>
+        <div>
+            <p class="section-kicker light-text">你的私人放映厅</p>
+            <h1>记录每一次<br>被电影打动的瞬间</h1>
+            <p>评分、短评和片单都保存在你自己的电脑里。</p>
+        </div>
+        <a class="text-link light-text" href="/">先随便看看电影 →</a>
+    </section>
+
+    <section class="auth-form-wrap">
+        <div class="auth-tabs" role="tablist">
+            <button class="auth-tab active" data-tab="login" type="button">登录</button>
+            <button class="auth-tab" data-tab="register" type="button">注册</button>
+        </div>
+        <form id="login-form" class="auth-form">
+            <label>
+                <span>用户名</span>
+                <input id="login-username" type="text" autocomplete="username" required>
+            </label>
+            <label>
+                <span>密码</span>
+                <input id="login-password" type="password" autocomplete="current-password" required>
+            </label>
+            <p id="login-message" class="form-message"></p>
+            <button class="button primary full" type="submit">登录蓝影</button>
+            <p class="demo-hint">演示账号：<strong>demo / demo123</strong></p>
+        </form>
+        <form id="register-form" class="auth-form" hidden>
+            <label>
+                <span>用户名</span>
+                <input id="register-username" type="text" minlength="3" autocomplete="username" required>
+            </label>
+            <label>
+                <span>昵称</span>
+                <input id="register-nickname" type="text" maxlength="20" required>
+            </label>
+            <label>
+                <span>密码</span>
+                <input id="register-password" type="password" minlength="6" autocomplete="new-password" required>
+            </label>
+            <p id="register-message" class="form-message"></p>
+            <button class="button primary full" type="submit">创建账号</button>
+        </form>
+    </section>
+</main>
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/auth.js"></script>
+</body>
+</html>

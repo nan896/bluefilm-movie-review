@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="蓝影电影评论网站，发现电影、记录评分和评论。">
+    <title>蓝影 · 电影评论</title>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="header-inner">
+        <a class="brand" href="/" aria-label="蓝影首页">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2l2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>
+            </svg>
+            <span>蓝影</span>
+        </a>
+        <nav class="main-nav" aria-label="主导航">
+            <a class="active" href="/">选电影</a>
+            <a href="#rankings">排行榜</a>
+            <a href="#latest-reviews">最新评论</a>
+            <a href="/admin.html">管理</a>
+        </nav>
+        <form class="header-search" id="header-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="M20 20l-3.5-3.5"></path>
+            </svg>
+            <input id="search-input" type="search" placeholder="搜索电影、导演或演员" autocomplete="off">
+        </form>
+        <div id="user-area" class="user-area"></div>
+    </div>
+</header>
+
+<main>
+    <section class="featured-band" aria-labelledby="featured-title">
+        <div class="container featured-layout">
+            <div class="featured-copy">
+                <p class="section-kicker">今日推荐</p>
+                <h1 id="featured-title">正在加载电影...</h1>
+                <p id="featured-meta" class="featured-meta"></p>
+                <p id="featured-summary" class="featured-summary"></p>
+                <div class="featured-actions">
+                    <a id="featured-link" class="button primary" href="#">查看详情</a>
+                    <a class="button ghost" href="#movie-list">浏览片库</a>
+                </div>
+            </div>
+            <a id="featured-poster-link" class="featured-poster" href="#">
+                <img id="featured-poster" src="/assets/posters/poster-1.jpg" alt="">
+                <span id="featured-rating" class="score-badge">--</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="container content-band" id="movie-list">
+        <div class="content-main">
+            <div class="section-heading">
+                <div>
+                    <p class="section-kicker">电影片库</p>
+                    <h2>找一部今晚想看的电影</h2>
+                </div>
+                <label class="sort-control">
+                    <span>排序</span>
+                    <select id="sort-select">
+                        <option value="rating">评分最高</option>
+                        <option value="popular">最多浏览</option>
+                        <option value="latest">上映年份</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="category-row" id="category-row" aria-label="电影分类"></div>
+            <div class="movie-grid" id="movie-grid" aria-live="polite"></div>
+            <div class="empty-state" id="movie-empty" hidden>
+                <strong>没有找到匹配的电影</strong>
+                <span>换一个关键词或分类试试。</span>
+            </div>
+
+            <section class="review-band" id="latest-reviews">
+                <div class="section-heading compact">
+                    <div>
+                        <p class="section-kicker">新鲜短评</p>
+                        <h2>大家最近在看什么</h2>
+                    </div>
+                </div>
+                <div class="review-strip" id="recent-reviews"></div>
+            </section>
+        </div>
+
+        <aside class="rank-panel" id="rankings">
+            <div class="panel-heading">
+                <span>蓝影口碑榜</span>
+                <small>实时评分</small>
+            </div>
+            <ol id="ranking-list" class="ranking-list"></ol>
+            <a class="rank-foot-link" href="#movie-list">查看更多电影</a>
+        </aside>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <span>蓝影 · 本地电影评论网站</span>
+        <span>数据保存在本机 H2 数据库</span>
+    </div>
+</footer>
+
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/home.js"></script>
+</body>
+</html>

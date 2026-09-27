@@ -1,0 +1,10 @@
+target/
+data/
+.idea/
+*.iml
+.vscode/
+.edge-*/
+.chrome-*/
+*.log
+springboot-start.*.log
+docs/screenshots/*.tmp.png
